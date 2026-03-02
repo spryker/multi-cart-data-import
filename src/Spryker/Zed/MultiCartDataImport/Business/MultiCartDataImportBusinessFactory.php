@@ -21,9 +21,6 @@ use Spryker\Zed\MultiCartDataImport\Business\CartImportStep\StoreToIdStoreStep;
  */
 class MultiCartDataImportBusinessFactory extends DataImportBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function createCartDataImport(): DataImporterInterface
     {
         $dataImporter = $this->getCsvDataImporterFromConfig(
@@ -41,17 +38,11 @@ class MultiCartDataImportBusinessFactory extends DataImportBusinessFactory
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createStoreToIdStoreStep(): DataImportStepInterface
     {
         return new StoreToIdStoreStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createCustomerReferenceValidationStep(): DataImportStepInterface
     {
         return new CustomerReferenceValidationStep();

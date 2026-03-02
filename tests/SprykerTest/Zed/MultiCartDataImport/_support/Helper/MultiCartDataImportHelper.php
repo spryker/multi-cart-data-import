@@ -53,18 +53,12 @@ class MultiCartDataImportHelper extends Module
         $query->deleteAll();
     }
 
-    /**
-     * @return void
-     */
     public function assertDatabaseTablesContainsData(): void
     {
         $quoteQuery = $this->getQuoteQuery();
         $this->assertTrue($quoteQuery->count() > 0, 'Expected at least one entry in the database table but database table is empty.');
     }
 
-    /**
-     * @return \Orm\Zed\Quote\Persistence\SpyQuoteQuery
-     */
     protected function getQuoteQuery(): SpyQuoteQuery
     {
         return SpyQuoteQuery::create();

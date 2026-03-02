@@ -46,9 +46,6 @@ class MultiCartDataImportPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testImportImportsData(): void
     {
         $this->tester->ensureQuoteDatabaseTableIsEmpty();
@@ -74,9 +71,6 @@ class MultiCartDataImportPluginTest extends Unit
         $this->tester->assertDatabaseTablesContainsData();
     }
 
-    /**
-     * @return void
-     */
     public function testImportThrowsExceptionWhenCustomerNotFound(): void
     {
         $this->tester->ensureQuoteDatabaseTableIsEmpty();
@@ -99,9 +93,6 @@ class MultiCartDataImportPluginTest extends Unit
         $multiCartDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testImportThrowsExceptionWhenStoreNotFound(): void
     {
         $this->tester->ensureQuoteDatabaseTableIsEmpty();
@@ -127,9 +118,6 @@ class MultiCartDataImportPluginTest extends Unit
         $multiCartDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         // Act

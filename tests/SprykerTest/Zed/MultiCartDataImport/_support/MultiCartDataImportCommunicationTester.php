@@ -30,11 +30,6 @@ class MultiCartDataImportCommunicationTester extends Actor
 {
     use _generated\MultiCartDataImportCommunicationTesterActions;
 
-    /**
-     * @param array $seeds
-     *
-     * @return \Generated\Shared\Transfer\CustomerResponseTransfer
-     */
     public function createCustomer(array $seeds = []): CustomerResponseTransfer
     {
         $customerTransfer = $this->haveCustomer()
@@ -43,25 +38,16 @@ class MultiCartDataImportCommunicationTester extends Actor
         return $this->getCustomerFacade()->updateCustomer($customerTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function ensureQuoteDatabaseTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getQuoteQuery());
     }
 
-    /**
-     * @return \Orm\Zed\Quote\Persistence\SpyQuoteQuery
-     */
     protected function getQuoteQuery(): SpyQuoteQuery
     {
         return SpyQuoteQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\Customer\Business\CustomerFacadeInterface
-     */
     protected function getCustomerFacade(): CustomerFacadeInterface
     {
         return $this->getLocator()->customer()->facade();
