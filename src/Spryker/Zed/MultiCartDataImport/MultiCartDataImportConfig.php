@@ -13,6 +13,8 @@ use Spryker\Zed\DataImport\DataImportConfig;
 class MultiCartDataImportConfig extends DataImportConfig
 {
     /**
+     * @api
+     *
      * @var string
      */
     public const IMPORT_TYPE_MULTI_CART = 'multi-cart';
